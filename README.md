@@ -1,4 +1,11 @@
-nofactor.js
-===========
+```coffeescript
+var nofactor = require("nofactor"),
+nostr = nofactor.string;
 
-node factory
+
+var element = nostr.createElement("div"),
+element.setAttribute("id", "test");
+
+
+console.log(element.toString()); //<div id="test"></div>
+```
