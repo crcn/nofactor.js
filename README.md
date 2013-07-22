@@ -1,4 +1,4 @@
-```coffeescript
+```javascript
 var nofactor = require("nofactor"),
 nostr = nofactor.string;
 
