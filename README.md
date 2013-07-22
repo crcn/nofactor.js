@@ -1,0 +1,4 @@
+nofactor.js
+===========
+
+node factory
