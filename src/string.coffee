@@ -1,4 +1,5 @@
 bindable = require "bindable"
+ent      = require "ent"
 
 class Node
   __isNode: true
@@ -17,14 +18,13 @@ class Container extends Node
 
   appendChild: (node) -> 
 
-
-    # frag
+    # fragment?
     if node.nodeType is 11
-      @appendChild(child) for child in node.childNodes  
+      @appendChild(child) for child in node.childNodes.concat()  
       return
 
-    @_link node
     @childNodes.push node
+    @_link node
 
   ###
   ###
@@ -33,6 +33,9 @@ class Container extends Node
     i = @childNodes.indexOf child
     return unless ~i
     @childNodes.splice i, 1
+    child.previousSibling?.nextSibling = child.nextSibling
+    child.nextSibling?.previousSibling = child.previousSibling
+    child.parentNode = undefined
 
   ###
   ###
@@ -48,10 +51,10 @@ class Container extends Node
 
     return unless ~index
 
+    @childNodes.splice arguments...
+
     if node
       @_link node
-
-    @childNodes.splice arguments...
 
   ###
   ###
@@ -61,7 +64,20 @@ class Container extends Node
     unless node.__isNode
       throw new Error "cannot append non-node"
 
+    # remove from the previous parent
+    if node.parentNode and node.parentNode isnt @
+      node.parentNode.removeChild node
+
     node.parentNode = @
+    i = @childNodes.indexOf node
+
+    # FFox compatible
+    node.previousSibling = if i isnt 0 then @childNodes[i - 1] else undefined
+    node.nextSibling     = if i isnt @childNodes.length - 1 then @childNodes[i + 1] else undefined
+
+    node.previousSibling?.nextSibling = node
+    node.nextSibling?.previousSibling = node
+
 
 
 
@@ -92,13 +108,23 @@ class Element extends Container
 
   toString: () ->
     buffer = ["<", @name]
+    attribs = []
 
     for name of @attributes
-      buffer.push name + "=" + attributes[name]
+      v = @attributes[name]
+      attrbuff = name
+      if v?
+        attrbuff += "=\""+ent.encode(v)+"\""
+      attribs.push attrbuff
+
+
+
+    if attribs.length
+      buffer.push " ", attribs.join " "
 
     buffer.push ">"
     buffer.push @childNodes...
-    buffer.push "<", @name, "/>"
+    buffer.push "</", @name, ">"
 
     buffer.join ""
 
@@ -120,7 +146,7 @@ class Text extends Node
   ###
   ###
 
-  toString: () -> @value
+  toString: () -> ent.encode @value
 
 
 class Comment extends Text
