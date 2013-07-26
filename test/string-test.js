@@ -60,6 +60,20 @@ describe("string dom", function() {
     expect(tn.nextSibling).to.be(tn2);
   });
 
+  it("can properly prepend a fragment", function() {
+    var element = sd.createElement("div"),
+    tn, tn2, tn3;
+
+
+    element.appendChild(tn3 = sd.createTextNode("!!!"));
+
+    var frag = sd.createFragment(tn = sd.createTextNode("hello"), tn2 = sd.createTextNode("world"));
+    element.insertBefore(frag, tn3);
+    expect(element.toString()).to.be("<div>helloworld!!!</div>");
+    expect(tn.parentNode).to.be(element);
+    expect(tn.nextSibling).to.be(tn2);
+  })
+
 
 
   it("has the proper siblings", function() {

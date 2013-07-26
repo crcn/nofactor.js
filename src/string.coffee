@@ -41,6 +41,13 @@ class Container extends Node
   ###
 
   insertBefore: (newElement, before) ->
+
+    if newElement.nodeType is 11
+      for node in newElement.childNodes.concat().reverse()
+        @insertBefore node, before
+        before = node
+      return
+
     @_splice @childNodes.indexOf(before), 0, newElement
 
 
@@ -50,6 +57,8 @@ class Container extends Node
   _splice: (index = -1, count, node) ->
 
     return unless ~index
+
+
 
     @childNodes.splice arguments...
 
