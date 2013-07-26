@@ -23,6 +23,7 @@ class Container extends Node
       @appendChild(child) for child in node.childNodes.concat()  
       return
 
+    @_unlink node
     @childNodes.push node
     @_link node
 
@@ -35,7 +36,7 @@ class Container extends Node
     @childNodes.splice i, 1
     child.previousSibling?.nextSibling = child.nextSibling
     child.nextSibling?.previousSibling = child.previousSibling
-    child.parentNode = undefined
+    child.parentNode = child.nextSibling = child.previousSibling = undefined
 
   ###
   ###
@@ -58,7 +59,8 @@ class Container extends Node
 
     return unless ~index
 
-
+    if node
+      @_unlink node
 
     @childNodes.splice arguments...
 
@@ -68,14 +70,19 @@ class Container extends Node
   ###
   ###
 
+  _unlink: (node) ->
+    # remove from the previous parent
+    if node.parentNode
+      node.parentNode.removeChild node
+
+
+  ###
+  ###
+
   _link: (node) ->  
 
     unless node.__isNode
       throw new Error "cannot append non-node"
-
-    # remove from the previous parent
-    if node.parentNode and node.parentNode isnt @
-      node.parentNode.removeChild node
 
     node.parentNode = @
     i = @childNodes.indexOf node
