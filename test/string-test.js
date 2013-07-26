@@ -8,8 +8,8 @@ describe("string dom", function() {
     expect(sd.createTextNode("hello").toString()).to.be("hello");
   });
 
-  it("properly encodes a text node", function() {
-    expect(sd.createTextNode("hello <world").toString()).to.be("hello &lt;world");
+  it("doesn't encode a text node", function() {
+    expect(sd.createTextNode("hello <world").toString()).to.be("hello <world");
   });
 
   it("can create an element", function() {
@@ -29,11 +29,11 @@ describe("string dom", function() {
     expect(element.toString()).to.be("<div hello=\"world\" nada></div>");
   });
 
-  it("can properly encode attribute values", function() {
+  it("doesn't encode attribute values", function() {
     var element = sd.createElement("div");
     element.setAttribute("href", "http://");
     element.setAttribute("abc", "<;");
-    expect(element.toString()).to.be("<div href=\"http://\" abc=\"&lt;;\"></div>");
+    expect(element.toString()).to.be("<div href=\"http://\" abc=\"<;\"></div>");
   });
 
   it("can create a fragment", function() {

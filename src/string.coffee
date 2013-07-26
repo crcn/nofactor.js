@@ -1,5 +1,4 @@
 bindable = require "bindable"
-ent      = require "ent"
 
 class Node
   __isNode: true
@@ -130,7 +129,7 @@ class Element extends Container
       v = @attributes[name]
       attrbuff = name
       if v?
-        attrbuff += "=\""+ent.encode(v)+"\""
+        attrbuff += "=\""+v+"\""
       attribs.push attrbuff
 
 
@@ -162,7 +161,7 @@ class Text extends Node
   ###
   ###
 
-  toString: () -> ent.encode @value
+  toString: () -> @value
 
 
 class Comment extends Text
