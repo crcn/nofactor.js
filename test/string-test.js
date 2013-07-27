@@ -127,6 +127,7 @@ describe("string dom", function() {
     expect(node.attributes.length).to.be(1);
     node.setAttribute("id", "test2");
     expect(node.attributes.length).to.be(1);
+    expect(node.getAttribute("id")).to.be("test2");
   });
 
 
