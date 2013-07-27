@@ -110,13 +110,24 @@ class Element extends Container
 
   constructor: (@name) ->
     super()
-    @attributes = {}
+    @attributes  = []
+    @_attrsByKey = {}
 
   ###
   ###
 
-  setAttribute: (name, value) -> @attributes[name] = value
+  setAttribute: (name, value) ->  
 
+    unless (abk = @_attrsByKey[name])
+      @attributes.push abk = @_attrsByKey[name] = { }
+
+    abk.name  = name
+    abk.value = value
+
+  ###
+  ###
+
+  getAttribute: (name) -> @_attrsByKey[name]?.value
 
   ###
   ###
@@ -125,8 +136,8 @@ class Element extends Container
     buffer = ["<", @name]
     attribs = []
 
-    for name of @attributes
-      v = @attributes[name]
+    for name of @_attrsByKey
+      v = @_attrsByKey[name].value
       attrbuff = name
       if v?
         attrbuff += "=\""+v+"\""
