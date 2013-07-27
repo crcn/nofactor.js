@@ -120,6 +120,14 @@ describe("string dom", function() {
 
   });
 
+  
+  it("has the proper node attribute info", function() {
+    var node = sd.createElement("div");
+    node.setAttribute("id", "test");
+    expect(node.attributes.length).to.be(1);
+    node.setAttribute("id", "test2");
+    expect(node.attributes.length).to.be(1);
+  });
 
 
 
