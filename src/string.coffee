@@ -50,7 +50,6 @@ class Container extends Node
 
     @_splice @childNodes.indexOf(before), 0, newElement
 
-
   ###
   ###
 
@@ -188,7 +187,7 @@ class Element extends Container
 
     return unless buffer.length
 
-    @setAttribute "style", buffer.join(";")
+    @setAttribute "style", buffer.join(";") + ";"
 
   ###
   ###
@@ -199,6 +198,7 @@ class Element extends Container
 
     for style in styles.split(";")
       sp = style.split(":")
+      continue unless sp[1];
       newStyles[sp[0]] = sp[1]
 
     @style = newStyles

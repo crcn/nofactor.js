@@ -99,9 +99,10 @@ describe("string dom", function() {
 
   it("can manually set the style attribute", function() {
     var element = sd.createElement("div");
-    element.setAttribute("style", "visible:false;background-color:red");
+    element.setAttribute("style", "visible:false;background-color:red;");
     expect(element.style.visible).to.be("false");
     expect(element.style["background-color"]).to.be("red");
+
   });
 
 
