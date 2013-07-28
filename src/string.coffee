@@ -183,6 +183,7 @@ class Element extends Container
     buffer = []
 
     for key of @style
+      continue unless @style[key]?
       buffer.push "#{key}:#{@style[key]}"
 
     return unless buffer.length
@@ -198,7 +199,7 @@ class Element extends Container
 
     for style in styles.split(";")
       sp = style.split(":")
-      continue unless sp[1];
+      continue unless sp[1]?
       newStyles[sp[0]] = sp[1]
 
     @style = newStyles
