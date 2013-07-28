@@ -90,11 +90,11 @@ describe("string dom", function() {
     var element = sd.createElement("div");
     element.style.visible = false;
 
-    expect(String(element)).to.be('<div style="visible:false"></div>');
+    expect(String(element)).to.be('<div style="visible:false;"></div>');
     element.style.visible = true;
-    expect(String(element)).to.be('<div style="visible:true"></div>');
+    expect(String(element)).to.be('<div style="visible:true;"></div>');
     element.style["background-color"] = "#FF6600";
-    expect(String(element)).to.be('<div style="visible:true;background-color:#FF6600"></div>');
+    expect(String(element)).to.be('<div style="visible:true;background-color:#FF6600;"></div>');
   });
 
   it("can manually set the style attribute", function() {
