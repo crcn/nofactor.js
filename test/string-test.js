@@ -84,7 +84,18 @@ describe("string dom", function() {
     expect(element.toString()).to.be("<div>helloworld!!!</div>");
     expect(tn.parentNode).to.be(element);
     expect(tn.nextSibling).to.be(tn2);
-  })
+  });
+
+  it("can add style attributes", function() {
+    var element = sd.createElement("div");
+    element.style.visible = false;
+
+    expect(String(element)).to.be('<div style="visible:false"></div>');
+    element.style.visible = true;
+    expect(String(element)).to.be('<div style="visible:true"></div>');
+    element.style["background-color"] = "#FF6600";
+    expect(String(element)).to.be('<div style="visible:true;background-color:#FF6600"></div>');
+  });
 
 
 

@@ -112,6 +112,7 @@ class Element extends Container
     super()
     @attributes  = []
     @_attrsByKey = {}
+    @style = {}
 
   ###
   ###
@@ -152,6 +153,8 @@ class Element extends Container
     buffer = ["<", @name]
     attribs = []
 
+    @_setStyleAttribute()
+
     for name of @_attrsByKey
       v = @_attrsByKey[name].value
       attrbuff = name
@@ -170,6 +173,19 @@ class Element extends Container
 
     buffer.join ""
 
+  ###
+  ###
+
+  _setStyleAttribute: () ->
+
+    buffer = []
+
+    for key of @style
+      buffer.push "#{key}:#{@style[key]}"
+
+    return unless buffer.length
+
+    @setAttribute "style", buffer.join(";")
 
 
 
