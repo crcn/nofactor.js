@@ -119,6 +119,9 @@ class Element extends Container
 
   setAttribute: (name, value) -> 
 
+    if name is "style"
+      @_parseStyle value
+
     if value is undefined
       return @removeAttribute name 
 
@@ -186,6 +189,22 @@ class Element extends Container
     return unless buffer.length
 
     @setAttribute "style", buffer.join(";")
+
+  ###
+  ###
+
+  _parseStyle: (styles = "") ->
+
+    newStyles = {}
+
+    for style in styles.split(";")
+      sp = style.split(":")
+      newStyles[sp[0]] = sp[1]
+
+    @style = newStyles
+
+
+
 
 
 
