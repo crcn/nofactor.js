@@ -116,13 +116,29 @@ class Element extends Container
   ###
   ###
 
-  setAttribute: (name, value) ->  
+  setAttribute: (name, value) -> 
+
+    if value is undefined
+      return @removeAttribute name 
 
     unless (abk = @_attrsByKey[name])
       @attributes.push abk = @_attrsByKey[name] = { }
 
     abk.name  = name
     abk.value = value
+
+  ###
+  ###
+
+  removeAttribute: (name) ->
+
+    for attr, i in @attributes
+      if attr.name is name
+        @attributes.splice(i, 1)
+        break
+
+    delete @_attrsByKey[name]
+
 
   ###
   ###

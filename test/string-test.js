@@ -25,9 +25,21 @@ describe("string dom", function() {
   it("can create an element with attributes", function() {
     var element = sd.createElement("div");
     element.setAttribute("hello", "world");
-    element.setAttribute("nada");
-    expect(element.toString()).to.be("<div hello=\"world\" nada></div>");
+    expect(element.toString()).to.be("<div hello=\"world\"></div>");
   });
+
+  it("can remove attributes", function() {
+    var element = sd.createElement("div");
+    element.setAttribute("hello", "world");
+    expect(element.toString()).to.be("<div hello=\"world\"></div>");
+    element.setAttribute("hello", undefined);
+    expect(element.toString()).to.be("<div></div>");
+    element.setAttribute("hello", "b");
+    expect(element.toString()).to.be("<div hello=\"b\"></div>");
+    element.removeAttribute("hello");
+    expect(element.toString()).to.be("<div></div>");
+
+  })
 
   it("doesn't encode attribute values", function() {
     var element = sd.createElement("div");
