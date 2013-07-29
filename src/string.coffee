@@ -95,6 +95,64 @@ class Container extends Node
 
 
 
+class Style 
+
+  ###
+  ###
+
+  constructor: () ->
+  
+  ###
+  ###
+
+  setProperty: (key, value = "") ->
+
+    if value is ""
+      delete @[key]
+      return
+
+    @[key] = value
+
+  ###
+  ###
+
+  parse: (styles) ->
+
+
+
+    for style in styles.split(/;\s*/)
+      sp = style.split(/:\s*/)
+      continue if !sp[1]? or sp[1] is ""
+      @[sp[0]] = sp[1]
+
+
+
+  ###
+  ###
+
+  toString: () ->
+    buffer = []
+    for key of @
+      continue if @constructor.prototype[key]
+      v = @[key]
+      continue if v is ""
+      buffer.push "#{key}: #{@[key]}"
+
+    return "" unless buffer.length
+
+    buffer.join("; ") + ";"
+
+
+  ###
+  ###
+
+  hasStyles: () ->
+
+    for key of @
+      return true if @[key]? and !@constructor.prototype[key]
+
+    return false
+
 
 
 
@@ -114,7 +172,7 @@ class Element extends Container
     @_name = nodeName.toLowerCase(0)
     @attributes  = []
     @_attrsByKey = {}
-    @style = {}
+    @style = new Style()
 
   ###
   ###
@@ -124,7 +182,7 @@ class Element extends Container
     name = name.toLowerCase()
 
     if name is "style"
-      @_parseStyle value
+      return @style.parse value
 
     if value is undefined
       return @removeAttribute name 
@@ -161,14 +219,16 @@ class Element extends Container
     buffer = ["<", @_name]
     attribs = []
 
-    @_setStyleAttribute()
-
     for name of @_attrsByKey
       v = @_attrsByKey[name].value
       attrbuff = name
       if v?
         attrbuff += "=\""+v+"\""
       attribs.push attrbuff
+
+
+    if @style.hasStyles()
+      attribs.push "style=\"#{@style.toString()}\""
 
 
 
@@ -181,37 +241,7 @@ class Element extends Container
 
     buffer.join ""
 
-  ###
-  ###
 
-  _setStyleAttribute: () ->
-
-    buffer = []
-    hasStyles = false
-
-    for key of @style
-      continue if !@style[key]?
-      hasStyles = true
-      continue if @style[key] is ""
-      buffer.push "#{key}: #{@style[key]}"
-
-    return unless hasStyles
-
-    @setAttribute "style", if buffer.length then (buffer.join("; ") + ";") else ""
-
-  ###
-  ###
-
-  _parseStyle: (styles = "") ->
-
-    newStyles = {}
-
-    for style in styles.split(/;\s*/)
-      sp = style.split(/:\s*/)
-      continue if !sp[1]? or sp[1] is ""
-      newStyles[sp[0]] = sp[1]
-
-    @style = newStyles
 
 
 
