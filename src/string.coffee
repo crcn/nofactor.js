@@ -334,9 +334,9 @@ class StringNodeFactory extends require("./base")
   ###
   ###
 
-  createFragment: () -> 
+  createFragment: (children = []) -> 
     frag = new Fragment()
-    for child in arguments
+    for child in children
       frag.appendChild child
     frag
 

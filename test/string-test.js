@@ -65,7 +65,7 @@ describe("string dom", function() {
   it("can properly add a document fragment to an element", function() {
     var element = sd.createElement("div"),
     tn, tn2;
-    var frag = sd.createFragment(tn = sd.createTextNode("hello"), tn2 = sd.createTextNode("world"));
+    var frag = sd.createFragment([tn = sd.createTextNode("hello"), tn2 = sd.createTextNode("world")]);
     element.appendChild(frag);
     expect(element.toString()).to.be("<div>helloworld</div>");
     expect(tn.parentNode).to.be(element);
@@ -79,7 +79,7 @@ describe("string dom", function() {
 
     element.appendChild(tn3 = sd.createTextNode("!!!"));
 
-    var frag = sd.createFragment(tn = sd.createTextNode("hello"), tn2 = sd.createTextNode("world"));
+    var frag = sd.createFragment([tn = sd.createTextNode("hello"), tn2 = sd.createTextNode("world")]);
     element.insertBefore(frag, tn3);
     expect(element.toString()).to.be("<div>helloworld!!!</div>");
     expect(tn.parentNode).to.be(element);
