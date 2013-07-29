@@ -190,8 +190,9 @@ class Element extends Container
     hasStyles = false
 
     for key of @style
+      continue if !@style[key]?
       hasStyles = true
-      continue if !@style[key]? or @style[key] is ""
+      continue if @style[key] is ""
       buffer.push "#{key}: #{@style[key]}"
 
     return unless hasStyles
