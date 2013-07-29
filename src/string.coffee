@@ -186,7 +186,7 @@ class Element extends Container
 
     for key of @style
       continue unless @style[key]?
-      buffer.push "#{key}:#{@style[key]}"
+      buffer.push "#{key}: #{@style[key]}"
 
     return unless buffer.length
 
@@ -200,7 +200,7 @@ class Element extends Container
     newStyles = {}
 
     for style in styles.split(";")
-      sp = style.split(":")
+      sp = style.split(/:\s*/)
       continue unless sp[1]?
       newStyles[sp[0]] = sp[1]
 
