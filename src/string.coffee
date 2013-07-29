@@ -107,7 +107,7 @@ class Element extends Container
   ###
   ###
 
-  constructor: (@name) ->
+  constructor: (@nodeName) ->
     super()
     @attributes  = []
     @_attrsByKey = {}
@@ -152,7 +152,7 @@ class Element extends Container
   ###
 
   toString: () ->
-    buffer = ["<", @name]
+    buffer = ["<", @nodeName]
     attribs = []
 
     @_setStyleAttribute()
@@ -171,7 +171,7 @@ class Element extends Container
 
     buffer.push ">"
     buffer.push @childNodes...
-    buffer.push "</", @name, ">"
+    buffer.push "</", @nodeName, ">"
 
     buffer.join ""
 
