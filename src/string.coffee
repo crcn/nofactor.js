@@ -187,14 +187,16 @@ class Element extends Container
   _setStyleAttribute: () ->
 
     buffer = []
+    hasStyles = false
 
     for key of @style
-      continue unless @style[key]?
+      hasStyles = true
+      continue if !@style[key]? or @style[key] is ""
       buffer.push "#{key}: #{@style[key]}"
 
-    return unless buffer.length
+    return unless hasStyles
 
-    @setAttribute "style", buffer.join("; ") + ";"
+    @setAttribute "style", if buffer.length then (buffer.join("; ") + ";") else ""
 
   ###
   ###
@@ -205,7 +207,7 @@ class Element extends Container
 
     for style in styles.split(/;\s*/)
       sp = style.split(/:\s*/)
-      continue unless sp[1]?
+      continue if !sp[1]? or sp[1] is ""
       newStyles[sp[0]] = sp[1]
 
     @style = newStyles

@@ -97,6 +97,16 @@ describe("string dom", function() {
     expect(String(element)).to.be('<div style="visible: true; background-color: #FF6600;"></div>');
   });
 
+  it("removes a style if it's blank", function() {
+    var element = sd.createElement("div");
+    element.style.visible = false;
+
+    expect(String(element)).to.be('<div style="visible: false;"></div>');
+    element.style.visible = "";
+    expect(String(element)).to.be('<div style=""></div>');
+
+  })
+
   it("can manually set the style attribute", function() {
     var element = sd.createElement("div");
     element.setAttribute("style", "visible:false; background-color:red;");
