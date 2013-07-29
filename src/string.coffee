@@ -100,6 +100,11 @@ class Style
   ###
   ###
 
+  _hasStyle: false
+
+  ###
+  ###
+
   constructor: () ->
   
   ###
@@ -133,7 +138,7 @@ class Style
   toString: () ->
     buffer = []
     for key of @
-      continue if @constructor.prototype[key]
+      continue if @constructor.prototype[key]?
       v = @[key]
       continue if v is ""
       buffer.push "#{key}: #{@[key]}"
@@ -148,8 +153,10 @@ class Style
 
   hasStyles: () ->
 
+    return true if @_hasStyle
+
     for key of @
-      return true if @[key]? and !@constructor.prototype[key]
+      return (@_hasStyle = true) if @[key]? and !@constructor.prototype[key]?
 
     return false
 
