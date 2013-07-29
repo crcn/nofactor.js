@@ -190,7 +190,7 @@ class Element extends Container
 
     return unless buffer.length
 
-    @setAttribute "style", buffer.join(";") + ";"
+    @setAttribute "style", buffer.join("; ") + ";"
 
   ###
   ###
@@ -199,7 +199,7 @@ class Element extends Container
 
     newStyles = {}
 
-    for style in styles.split(";")
+    for style in styles.split(/;\s*/)
       sp = style.split(/:\s*/)
       continue unless sp[1]?
       newStyles[sp[0]] = sp[1]
