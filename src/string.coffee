@@ -261,6 +261,11 @@ class StringNodeFactory extends require("./base")
   ###
   ###
 
+  name: "string"
+
+  ###
+  ###
+
   constructor: (@context) -> 
     @internal = new bindable.Object()
 

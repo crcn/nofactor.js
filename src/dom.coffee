@@ -1,5 +1,10 @@
 
 class DomFactory extends require("./base")
+
+  ###
+  ###
+
+  name: "dom"
   
   ###
   ###
