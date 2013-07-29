@@ -118,6 +118,8 @@ class Element extends Container
 
   setAttribute: (name, value) -> 
 
+    name = name.toLowerCase()
+
     if name is "style"
       @_parseStyle value
 

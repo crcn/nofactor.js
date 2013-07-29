@@ -105,6 +105,13 @@ describe("string dom", function() {
 
   });
 
+  // DOM compliant
+  it("lowercases an attribute name", function() {
+    var element = sd.createElement("div");
+    element.setAttribute("onClick", "false");
+    expect(String(element)).to.be("<div onclick=\"false\"></div>");
+  })
+
 
 
   it("has the proper siblings", function() {
