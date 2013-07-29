@@ -1,4 +1,5 @@
 bindable = require "bindable"
+ent      = require "./ent"
 
 class Node
   __isNode: true
@@ -221,7 +222,8 @@ class Text extends Node
   ###
   ###
 
-  constructor: (@value) ->
+  constructor: (value) ->
+    @value = ent value
 
   ###
   ###

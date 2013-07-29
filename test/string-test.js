@@ -9,7 +9,7 @@ describe("string dom", function() {
   });
 
   it("doesn't encode a text node", function() {
-    expect(sd.createTextNode("hello <world").toString()).to.be("hello <world");
+    expect(sd.createTextNode("hello <world").toString()).to.be("hello &lt;world");
   });
 
   it("can create an element", function() {
