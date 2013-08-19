@@ -26,9 +26,9 @@ class DomFactory extends require("./base")
 
   createFragment: (children = []) -> 
     frag = document.createDocumentFragment() 
-    for child in children
-      frag.appendChild child
-    frag
+    `for(var i = children.length; i--;) {`
+    frag.prependChild children[i]
+    `}`
 
   ###
   ###

@@ -30,6 +30,16 @@ class Container extends Node
   ###
   ###
 
+  prependChild: (node) ->
+    unless @childNodes.length
+      @appendChild node
+    else
+      @insertBefore node, @childNodes[0]
+
+
+  ###
+  ###
+
   removeChild: (child) ->
     i = @childNodes.indexOf child
     return unless ~i
@@ -336,8 +346,9 @@ class StringNodeFactory extends require("./base")
 
   createFragment: (children = []) -> 
     frag = new Fragment()
-    for child in children
-      frag.appendChild child
+    `for(var i = children.length; i--;) {`
+    frag.prependChild children[i]
+    `}`
     frag
 
   ###
