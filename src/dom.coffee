@@ -28,8 +28,10 @@ class DomFactory extends require("./base")
 
     frag = document.createDocumentFragment() 
 
-    # copy the array incase it's a node list
-    childrenToArray = Array.prototype.slice.call(children, 0)
+    childrenToArray = []
+
+    for child in children
+      childrenToArray.push child
 
     for child in childrenToArray
       frag.appendChild child
