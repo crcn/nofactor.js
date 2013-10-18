@@ -17,5 +17,9 @@
   "dependencies": {
     "bindable": "~0.4.8",
     "ent": "0.0.x"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "mocha": "~1.13.0"
   }
 }
