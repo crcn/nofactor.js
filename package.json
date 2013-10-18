@@ -4,7 +4,7 @@
   "description": "```javascript var nofactor = require(\"nofactor\"), nostr = nofactor.string;",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 100"
   },
   "repository": {
     "type": "git",
@@ -13,5 +13,9 @@
   "author": "",
   "license": "BSD",
   "readmeFilename": "README.md",
-  "gitHead": "c4741b3d1827e440afef573b36a5170e8b30326e"
+  "gitHead": "c4741b3d1827e440afef573b36a5170e8b30326e",
+  "dependencies": {
+    "bindable": "~0.4.8",
+    "ent": "0.0.x"
+  }
 }
