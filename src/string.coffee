@@ -275,8 +275,12 @@ class Text extends Node
   ###
   ###
 
-  constructor: (value) ->
-    @value = ent value
+  constructor: (value, encode) ->
+
+    if encode
+      value = ent value
+
+    @value = value
 
   ###
   ###
@@ -334,7 +338,7 @@ class StringNodeFactory extends require("./base")
   ###
   ###
 
-  createTextNode: (text) -> new Text text
+  createTextNode: (text, encode) -> new Text text, encode
 
   ###
   ###
