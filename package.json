@@ -17,7 +17,7 @@
   "dependencies": {
     "bindable": "0.4.x",
     "ent": "0.0.x",
-    "structr": "~0.3.2"
+    "protoclass": "0.0.x"
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
