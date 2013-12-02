@@ -1,4 +1,4 @@
-Nofactor is DOM API adapter that's supported in node.js, and on the web. It's used for DOM creation / manipulation in [paperclip.js](/classdojo/paperclip.js). [![Alt ci](https://travis-ci.org/classdojo/nofactor.js.png)](https://travis-ci.org/classdojo/nofactor.js)
+Nofactor is a DOM API adapter that's supported in node.js, and on the web. It's used for DOM creation / manipulation in [paperclip.js](/classdojo/paperclip.js). [![Alt ci](https://travis-ci.org/classdojo/nofactor.js.png)](https://travis-ci.org/classdojo/nofactor.js)
 
 
 ```javascript
