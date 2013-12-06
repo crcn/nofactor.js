@@ -1,9 +1,11 @@
-all:
-	coffee -b -o lib -c src;
+testt:
+	./node_modules/.bin/_mocha ./test --ignore-leaks --timeout 100
 
-clean:
-	rm -rf lib;
+test-cov:
+	./node_modules/.bin/istanbul cover \
+	./node_modules/.bin/_mocha ./test --ignore-leaks --timeout 100
 
-
-all-watch:
-	coffee -b -o lib -cw src;
+test-coveralls:
+	./node_modules/.bin/istanbul cover \
+	./node_modules/.bin/_mocha ./test--ignore-leaks --timeout 100 --report lcovonly -- -R spec && \
+	cat ./coverage/lcov.info | ./node_modules/.bin/coveralls --verbose
