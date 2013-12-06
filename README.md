@@ -1,4 +1,5 @@
 Nofactor is a light DOM API wrapper that's supported in node.js, and in the browser (IE 6+, Chrome, Firefox, Opera, Safari). It's used for DOM creation / manipulation in [paperclip.js](/classdojo/paperclip.js). [![Alt ci](https://travis-ci.org/classdojo/nofactor.js.png)](https://travis-ci.org/classdojo/nofactor.js)
+[![Coverage Status](https://coveralls.io/repos/classdojo/nofactor.js/badge.png)](https://coveralls.io/r/classdojo/nofactor.js)
 
 
 ```javascript
