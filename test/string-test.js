@@ -101,7 +101,7 @@ describe("string dom", function() {
   it("can add multiple styles", function () {
     var element = sd.createElement("div");
     element.setAttribute("style", "position: absolute; top: 0; right: 0; border: 0;");
-    expect(element.toString()).to.be('<div style="border: 0; right: 0; top: 0; position: absolute;"></div>');
+    expect(element.toString()).to.be('<div style="position: absolute; top: 0; right: 0; border: 0;"></div>');
   });
 
   it("removes a style if it's blank", function() {
