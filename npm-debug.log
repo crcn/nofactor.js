@@ -1,0 +1,171 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.21
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/craig/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz
+12 verbose folder .
+13 silly lockFile 1f1177db-tar tar://.
+14 verbose lock tar://. /Users/craig/.npm/1f1177db-tar.lock
+15 silly lockFile 61196873-1639-0-29202141030691564-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz
+16 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz /Users/craig/.npm/61196873-1639-0-29202141030691564-tmp-tgz.lock
+17 silly lockFile 1f1177db-tar tar://.
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 61196873-1639-0-29202141030691564-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz
+20 silly lockFile 61196873-1639-0-29202141030691564-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz
+21 verbose tar unpack /var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz
+22 silly lockFile e7b9a553-1639-0-29202141030691564-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package
+23 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package /Users/craig/.npm/e7b9a553-1639-0-29202141030691564-package.lock
+24 silly lockFile 61196873-1639-0-29202141030691564-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz
+25 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz /Users/craig/.npm/61196873-1639-0-29202141030691564-tmp-tgz.lock
+26 silly gunzTarPerm modes [ '755', '644' ]
+27 silly gunzTarPerm extractEntry package.json
+28 silly gunzTarPerm extractEntry .npmignore
+29 silly gunzTarPerm extractEntry README.md
+30 silly gunzTarPerm extractEntry .coveralls.yml
+31 silly gunzTarPerm extractEntry .travis.yml
+32 silly gunzTarPerm extractEntry coverage/coverage.json
+33 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.js
+34 silly gunzTarPerm extractEntry coverage/lcov-report/index.html
+35 silly gunzTarPerm extractEntry coverage/lcov-report/lib/base.js.html
+36 silly gunzTarPerm extractEntry coverage/lcov-report/lib/dom.js.html
+37 silly gunzTarPerm extractEntry coverage/lcov-report/lib/ent.js.html
+38 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.html
+39 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.js.html
+40 silly gunzTarPerm extractEntry coverage/lcov-report/lib/string.js.html
+41 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.css
+42 silly gunzTarPerm extractEntry coverage/lcov.info
+43 silly gunzTarPerm extractEntry lib/base.js
+44 silly gunzTarPerm extractEntry lib/dom.js
+45 silly gunzTarPerm extractEntry lib/ent.js
+46 silly gunzTarPerm extractEntry lib/index.js
+47 silly gunzTarPerm extractEntry lib/string.js
+48 silly gunzTarPerm extractEntry makefile
+49 silly gunzTarPerm extractEntry test/clone-test.js
+50 silly gunzTarPerm extractEntry test/string-test.js
+51 silly lockFile e7b9a553-1639-0-29202141030691564-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package
+52 silly lockFile e7b9a553-1639-0-29202141030691564-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package
+53 silly lockFile 61196873-1639-0-29202141030691564-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz
+54 silly lockFile 61196873-1639-0-29202141030691564-tmp-tgz tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/tmp.tgz
+55 verbose tar pack [ '/Users/craig/.npm/nofactor/0.0.33/package.tgz',
+55 verbose tar pack   '/var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package' ]
+56 verbose tarball /Users/craig/.npm/nofactor/0.0.33/package.tgz
+57 verbose folder /var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package
+58 silly lockFile e7b9a553-1639-0-29202141030691564-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package
+59 verbose lock tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package /Users/craig/.npm/e7b9a553-1639-0-29202141030691564-package.lock
+60 silly lockFile f0971a7c--npm-nofactor-0-0-33-package-tgz tar:///Users/craig/.npm/nofactor/0.0.33/package.tgz
+61 verbose lock tar:///Users/craig/.npm/nofactor/0.0.33/package.tgz /Users/craig/.npm/f0971a7c--npm-nofactor-0-0-33-package-tgz.lock
+62 silly lockFile e7b9a553-1639-0-29202141030691564-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package
+63 silly lockFile e7b9a553-1639-0-29202141030691564-package tar:///var/folders/n1/r96x64mx6jzcbzkbz1ddrw6r0000gn/T/npm-7908-rScwsxfA/1388810001639-0.29202141030691564/package
+64 silly lockFile f0971a7c--npm-nofactor-0-0-33-package-tgz tar:///Users/craig/.npm/nofactor/0.0.33/package.tgz
+65 silly lockFile f0971a7c--npm-nofactor-0-0-33-package-tgz tar:///Users/craig/.npm/nofactor/0.0.33/package.tgz
+66 silly lockFile 8d66de75-raig-npm-nofactor-0-0-33-package /Users/craig/.npm/nofactor/0.0.33/package
+67 verbose lock /Users/craig/.npm/nofactor/0.0.33/package /Users/craig/.npm/8d66de75-raig-npm-nofactor-0-0-33-package.lock
+68 silly lockFile 8d66de75-raig-npm-nofactor-0-0-33-package /Users/craig/.npm/nofactor/0.0.33/package
+69 silly lockFile 8d66de75-raig-npm-nofactor-0-0-33-package /Users/craig/.npm/nofactor/0.0.33/package
+70 verbose tar unpack /Users/craig/.npm/nofactor/0.0.33/package.tgz
+71 silly lockFile 73fb1b9e-raig-npm-nofactor-0-0-33-package tar:///Users/craig/.npm/nofactor/0.0.33/package
+72 verbose lock tar:///Users/craig/.npm/nofactor/0.0.33/package /Users/craig/.npm/73fb1b9e-raig-npm-nofactor-0-0-33-package.lock
+73 silly lockFile f0971a7c--npm-nofactor-0-0-33-package-tgz tar:///Users/craig/.npm/nofactor/0.0.33/package.tgz
+74 verbose lock tar:///Users/craig/.npm/nofactor/0.0.33/package.tgz /Users/craig/.npm/f0971a7c--npm-nofactor-0-0-33-package-tgz.lock
+75 silly gunzTarPerm modes [ '755', '644' ]
+76 silly gunzTarPerm extractEntry package.json
+77 silly gunzTarPerm extractEntry .npmignore
+78 silly gunzTarPerm extractEntry README.md
+79 silly gunzTarPerm extractEntry .coveralls.yml
+80 silly gunzTarPerm extractEntry .travis.yml
+81 silly gunzTarPerm extractEntry coverage/coverage.json
+82 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.js
+83 silly gunzTarPerm extractEntry coverage/lcov-report/index.html
+84 silly gunzTarPerm extractEntry coverage/lcov-report/lib/base.js.html
+85 silly gunzTarPerm extractEntry coverage/lcov-report/lib/dom.js.html
+86 silly gunzTarPerm extractEntry coverage/lcov-report/lib/ent.js.html
+87 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.html
+88 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.js.html
+89 silly gunzTarPerm extractEntry coverage/lcov-report/lib/string.js.html
+90 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.css
+91 silly gunzTarPerm extractEntry coverage/lcov.info
+92 silly gunzTarPerm extractEntry lib/base.js
+93 silly gunzTarPerm extractEntry lib/dom.js
+94 silly gunzTarPerm extractEntry lib/ent.js
+95 silly gunzTarPerm extractEntry lib/index.js
+96 silly gunzTarPerm extractEntry lib/string.js
+97 silly gunzTarPerm extractEntry makefile
+98 silly gunzTarPerm extractEntry test/clone-test.js
+99 silly gunzTarPerm extractEntry test/string-test.js
+100 silly lockFile 73fb1b9e-raig-npm-nofactor-0-0-33-package tar:///Users/craig/.npm/nofactor/0.0.33/package
+101 silly lockFile 73fb1b9e-raig-npm-nofactor-0-0-33-package tar:///Users/craig/.npm/nofactor/0.0.33/package
+102 silly lockFile f0971a7c--npm-nofactor-0-0-33-package-tgz tar:///Users/craig/.npm/nofactor/0.0.33/package.tgz
+103 silly lockFile f0971a7c--npm-nofactor-0-0-33-package-tgz tar:///Users/craig/.npm/nofactor/0.0.33/package.tgz
+104 verbose chmod /Users/craig/.npm/nofactor/0.0.33/package.tgz 644
+105 verbose chown /Users/craig/.npm/nofactor/0.0.33/package.tgz [ 501, 20 ]
+106 silly lockFile 3a52ce78- .
+107 silly lockFile 3a52ce78- .
+108 silly publish { name: 'nofactor',
+108 silly publish   version: '0.0.33',
+108 silly publish   description: '```javascript var nofactor = require("nofactor"), nostr = nofactor.string;',
+108 silly publish   main: './lib/index.js',
+108 silly publish   scripts: { test: 'mocha --timeout 100' },
+108 silly publish   repository:
+108 silly publish    { type: 'git',
+108 silly publish      url: 'git://github.com/classdojo/nofactor.js.git' },
+108 silly publish   author: '',
+108 silly publish   license: 'BSD',
+108 silly publish   readmeFilename: 'README.md',
+108 silly publish   gitHead: 'c4741b3d1827e440afef573b36a5170e8b30326e',
+108 silly publish   dependencies: { bindable: '0.4.x', ent: '0.0.x', protoclass: '0.0.x' },
+108 silly publish   devDependencies:
+108 silly publish    { 'expect.js': '~0.2.0',
+108 silly publish      mocha: '~1.13.0',
+108 silly publish      istanbul: '~0.1.46',
+108 silly publish      coveralls: '~2.6.0' },
+108 silly publish   readme: 'Nofactor is a light DOM API wrapper that\'s supported in node.js, and in the browser (IE 6+, Chrome, Firefox, Opera, Safari). It\'s used for DOM creation / manipulation in [paperclip.js](/classdojo/paperclip.js). [![Alt ci](https://travis-ci.org/classdojo/nofactor.js.png)](https://travis-ci.org/classdojo/nofactor.js)\n[![Coverage Status](https://coveralls.io/repos/classdojo/nofactor.js/badge.png)](https://coveralls.io/r/classdojo/nofactor.js)\n\n\n```javascript\nvar nofactor = require("nofactor"),\n\n// pick the default DOM adapter - node, or browser (thin).\nnostr = nofactor.default; \n\n\nvar element = nostr.createElement("div"),\nelement.setAttribute("id", "test");\n\n\nconsole.log(element.toString()); //<div id="test"></div>\n```\n',
+108 silly publish   bugs: { url: 'https://github.com/classdojo/nofactor.js/issues' },
+108 silly publish   _id: 'nofactor@0.0.33',
+108 silly publish   dist: { shasum: '09761f247c0e8e2946ee1fa76578ba29d9c87640' },
+108 silly publish   _from: '.' }
+109 verbose url raw nofactor
+110 verbose url resolving [ 'http://registry.npmjs.org/', './nofactor' ]
+111 verbose url resolved http://registry.npmjs.org/nofactor
+112 info trying registry request attempt 1 at 22:33:21
+113 http PUT http://registry.npmjs.org/nofactor
+114 http 409 http://registry.npmjs.org/nofactor
+115 verbose url raw nofactor
+116 verbose url resolving [ 'http://registry.npmjs.org/', './nofactor' ]
+117 verbose url resolved http://registry.npmjs.org/nofactor
+118 info trying registry request attempt 1 at 22:33:22
+119 http GET http://registry.npmjs.org/nofactor
+120 http 200 http://registry.npmjs.org/nofactor
+121 error publish fail Cannot publish over existing version.
+121 error publish fail Update the 'version' field in package.json and try again.
+121 error publish fail
+121 error publish fail If the previous version was published in error, see:
+121 error publish fail     npm help unpublish
+121 error publish fail
+121 error publish fail To automatically increment version numbers, see:
+121 error publish fail     npm help version
+122 error System Darwin 13.0.0
+123 error command "node" "/usr/local/bin/npm" "publish"
+124 error cwd /Users/craig/Developer/Public/nofactor.js
+125 error node -v v0.10.21
+126 error npm -v 1.3.11
+127 error code EPUBLISHCONFLICT
+128 verbose exit [ 1, true ]
