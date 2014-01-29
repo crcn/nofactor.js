@@ -1,6 +1,6 @@
 {
   "name": "nofactor",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "```javascript var nofactor = require(\"nofactor\"), nostr = nofactor.string;",
   "main": "./lib/index.js",
   "scripts": {
@@ -15,7 +15,6 @@
   "readmeFilename": "README.md",
   "gitHead": "c4741b3d1827e440afef573b36a5170e8b30326e",
   "dependencies": {
-    "bindable": "0.4.x",
     "ent": "0.0.x",
     "protoclass": "0.0.x"
   },
