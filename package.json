@@ -22,6 +22,7 @@
     "expect.js": "~0.2.0",
     "mocha": "~1.13.0",
     "istanbul": "~0.1.46",
-    "coveralls": "~2.6.0"
+    "coveralls": "~2.6.0",
+    "browserify": "~3.24.8"
   }
 }
