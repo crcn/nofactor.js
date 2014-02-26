@@ -90,25 +90,25 @@ describe("string dom", function() {
     var element = sd.createElement("div");
     element.style.visible = false;
 
-    expect(String(element)).to.be('<div style="visible: false;"></div>');
+    expect(String(element)).to.be('<div style="visible:false;"></div>');
     element.style.visible = true;
-    expect(String(element)).to.be('<div style="visible: true;"></div>');
+    expect(String(element)).to.be('<div style="visible:true;"></div>');
     element.style["background-color"] = "#FF6600";
-    expect(String(element)).to.be('<div style="visible: true; background-color: #FF6600;"></div>');
+    expect(String(element)).to.be('<div style="visible:true;background-color:#FF6600;"></div>');
   });
 
 
   it("can add multiple styles", function () {
     var element = sd.createElement("div");
     element.setAttribute("style", "position: absolute; top: 0; right: 0; border: 0;");
-    expect(element.toString()).to.be('<div style="position: absolute; top: 0; right: 0; border: 0;"></div>');
+    expect(element.toString()).to.be('<div style="position:absolute;top:0;right:0;border:0;"></div>');
   });
 
   it("removes a style if it's blank", function() {
     var element = sd.createElement("div");
     element.style.visible = false;
 
-    expect(String(element)).to.be('<div style="visible: false;"></div>');
+    expect(String(element)).to.be('<div style="visible:false;"></div>');
     element.style.visible = "";
     expect(String(element)).to.be('<div style=""></div>');
 
