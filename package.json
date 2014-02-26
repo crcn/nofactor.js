@@ -1,6 +1,6 @@
 {
   "name": "nofactor",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "```javascript var nofactor = require(\"nofactor\"), nostr = nofactor.string;",
   "main": "./lib/index.js",
   "scripts": {
@@ -16,7 +16,8 @@
   "gitHead": "c4741b3d1827e440afef573b36a5170e8b30326e",
   "dependencies": {
     "ent": "0.0.x",
-    "protoclass": "0.0.x"
+    "protoclass": "0.0.x",
+    "factories": "0.0.7"
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
