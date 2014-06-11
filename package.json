@@ -15,9 +15,9 @@
   "readmeFilename": "README.md",
   "gitHead": "c4741b3d1827e440afef573b36a5170e8b30326e",
   "dependencies": {
-    "ent": "0.0.x",
-    "protoclass": "0.0.x",
-    "factories": "0.0.7"
+    "he": "~0.4.1",
+    "factories": "0.0.7",
+    "protoclass": "0.0.x"
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
