@@ -186,5 +186,16 @@ describe("string dom", function() {
   });
 
 
+  it("properly maintains the order of nodes that exist when calling insertBefore", function () {
+    var node = sd.createElement("div");
+    for (var i = 10; i--;) node.appendChild(sd.createTextNode(i));
+    var end = sd.createTextNode("end");
+    node.appendChild(end);
+    var childNodes = node.childNodes.concat();
+    for (var i = 10; i--;) node.insertBefore(childNodes[i], end);
+    expect(node.toString()).to.be("<div>0123456789end</div>");
+  }); 
+
+
 
 });
