@@ -10,7 +10,7 @@ describe("void#", function () {
 
 	voidElements.forEach(function (nodeName) {
 		it("properly prints for " + nodeName, function () {
-			expect(nofactor["default"].createElement(nodeName).toString()).to.be("<" + nodeName + "></"+nodeName+">");
+			expect(nofactor["default"].createElement(nodeName).toString()).to.be("<" + nodeName + ">");
 		});	
 	});
 });
