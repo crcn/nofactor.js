@@ -1,5 +1,6 @@
 var nofactor = require("../"),
-expect = require("expect.js");
+expect = require("expect.js"),
+sinon  = require("sinon");
 
 describe("string dom", function() {
   sd = nofactor.string;
@@ -88,12 +89,12 @@ describe("string dom", function() {
 
   it("can add style attributes", function() {
     var element = sd.createElement("div");
-    element.style.visible = false;
+    element.style.setProperty("visible", false);
 
     expect(String(element)).to.be('<div style="visible:false;"></div>');
-    element.style.visible = true;
+    element.style.setProperty("visible", true);
     expect(String(element)).to.be('<div style="visible:true;"></div>');
-    element.style["background-color"] = "#FF6600";
+    element.style.setProperty("background-color", "#FF6600");
     expect(String(element)).to.be('<div style="visible:true;background-color:#FF6600;"></div>');
   });
 
@@ -106,10 +107,10 @@ describe("string dom", function() {
 
   it("removes a style if it's blank", function() {
     var element = sd.createElement("div");
-    element.style.visible = false;
+    element.style.setProperty("visible", false);
 
     expect(String(element)).to.be('<div style="visible:false;"></div>');
-    element.style.visible = "";
+    element.style.setProperty("visible", "");
     expect(String(element)).to.be('<div style=""></div>');
 
   })
@@ -231,5 +232,38 @@ describe("string dom", function() {
     expect(child.nextSibling).to.be(void 0);
     expect(child.previousSibling).to.be(void 0);
   });
+
+
+  it("triggers a change when an element is appended, insertedBefore, insertedAfter, or removed", function () {
+    var node = sd.createElement("div"),
+    cd       = sd.createTextNode("ab"),
+    cd2      = sd.createTextNode("ab2");
+    node.appendChild(cd2);
+
+    var stub = sinon.stub(node, "_triggerChange");
+
+    node.appendChild(cd);
+
+    expect(stub.callCount).to.be(1);
+    node.removeChild(cd);
+    expect(stub.callCount).to.be(2);
+    node.prependChild(cd);
+    expect(stub.callCount).to.be(3);
+    node.removeChild(cd);
+    node.insertBefore(cd, cd2);
+    expect(stub.callCount).to.be(5);
+
+  });
+
+  it("bubbles up trigger changes", function () {
+    var node = sd.createElement("div"),
+    cd       = sd.createElement("div");
+
+    node.appendChild(cd);
+
+    cd._triggerChange();
+    expect(node._hasChanged).to.be(true);
+  });
+
 
 });
