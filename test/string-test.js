@@ -203,6 +203,17 @@ describe("string dom", function() {
     expect(node.toString()).to.be("<div>ab</div>");
     node.insertBefore(child, child);
     expect(node.toString()).to.be("<div>ab</div>");
-  })
+  });
+
+  it("ignores if the appended / prepended node is itself", function () {
+    var node = sd.createElement("div");
+    var child = sd.createTextNode("ab");
+    node.appendChild(child);
+    expect(node.toString()).to.be("<div>ab</div>");
+    node.appendChild(node);
+    expect(node.toString()).to.be("<div>ab</div>");
+    node.prependChild(node);
+    expect(node.toString()).to.be("<div>ab</div>");
+  });
 
 });
