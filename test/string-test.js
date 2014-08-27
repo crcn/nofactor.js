@@ -216,4 +216,20 @@ describe("string dom", function() {
     expect(node.toString()).to.be("<div>ab</div>");
   });
 
+
+  it("sets the child parent / siblings to undefined if removed from an element", function () {
+    var node = sd.createElement("div");
+    child = sd.createTextNode("ab");
+    var prec = sd.createTextNode("pre");
+    var posc = sd.createTextNode("pos");
+    node.appendChild(prec);
+    node.appendChild(child);
+    node.appendChild(posc);
+    expect(child.parentNode).to.be(node);
+    node.removeChild(child);
+    expect(child.parentNode).to.be(void 0);
+    expect(child.nextSibling).to.be(void 0);
+    expect(child.previousSibling).to.be(void 0);
+  });
+
 });
