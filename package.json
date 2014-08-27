@@ -1,6 +1,6 @@
 {
   "name": "nofactor",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "```javascript var nofactor = require(\"nofactor\"), nostr = nofactor.string;",
   "main": "./lib/index.js",
   "scripts": {

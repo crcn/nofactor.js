@@ -196,6 +196,13 @@ describe("string dom", function() {
     expect(node.toString()).to.be("<div>0123456789end</div>");
   }); 
 
-
+  it("ignores insertBefore if the node is itself", function () {
+    var node = sd.createElement("div");
+    var child = sd.createTextNode("ab");
+    node.appendChild(child);
+    expect(node.toString()).to.be("<div>ab</div>");
+    node.insertBefore(child, child);
+    expect(node.toString()).to.be("<div>ab</div>");
+  })
 
 });
