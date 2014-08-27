@@ -260,9 +260,10 @@ describe("string dom", function() {
     cd       = sd.createElement("div");
 
     node.appendChild(cd);
-
+    node.toString();
+    expect(node._innerHTML).to.be("<div><div></div></div>")
     cd._triggerChange();
-    expect(node._hasChanged).to.be(true);
+    expect(node._innerHTML).to.be(void 0);
   });
 
 
