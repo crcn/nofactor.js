@@ -1,4 +1,4 @@
-var nf = require("..").default,
+var nf = require(".."),
 expect = require("expect.js");
 
 describe("clone#", function () {

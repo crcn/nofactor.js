@@ -3,7 +3,7 @@ expect = require("expect.js"),
 sinon  = require("sinon");
 
 describe("string dom", function() {
-  sd = nofactor.string;
+  sd = nofactor;
 
   it("can create a text node", function() {
     expect(sd.createTextNode("hello").toString()).to.be("hello");
