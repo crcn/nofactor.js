@@ -1,6 +1,6 @@
 {
   "name": "nofactor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "```javascript var nofactor = require(\"nofactor\"), nostr = nofactor.string;",
   "main": "./lib/node.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "gitHead": "c4741b3d1827e440afef573b36a5170e8b30326e",
   "dependencies": {
     "he": "~0.4.1",
-    "factories": "0.0.7",
+    "factories": "0.0.x",
     "protoclass": "0.0.x"
   },
   "devDependencies": {
