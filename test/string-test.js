@@ -50,7 +50,7 @@ describe("string dom", function() {
   });
 
   it("can create a fragment", function() {
-    var frag = sd.createFragment();
+    var frag = sd.createDocumentFragment();
     frag.appendChild(sd.createElement("div"));
     frag.appendChild(sd.createTextNode("abc"));
     expect(frag.toString()).to.be("<div></div>abc");
@@ -66,7 +66,9 @@ describe("string dom", function() {
   it("can properly add a document fragment to an element", function() {
     var element = sd.createElement("div"),
     tn, tn2;
-    var frag = sd.createFragment([tn = sd.createTextNode("hello"), tn2 = sd.createTextNode("world")]);
+    var frag = sd.createDocumentFragment();
+    frag.appendChild(tn = sd.createTextNode("hello"));
+    frag.appendChild(tn2 = sd.createTextNode("world"));
     element.appendChild(frag);
     expect(element.toString()).to.be("<div>helloworld</div>");
     expect(tn.parentNode).to.be(element);
@@ -80,7 +82,10 @@ describe("string dom", function() {
 
     element.appendChild(tn3 = sd.createTextNode("!!!"));
 
-    var frag = sd.createFragment([tn = sd.createTextNode("hello"), tn2 = sd.createTextNode("world")]);
+    var frag = sd.createDocumentFragment();
+    frag.appendChild(tn = sd.createTextNode("hello"));
+    frag.appendChild(tn2 = sd.createTextNode("world"));
+
     element.insertBefore(frag, tn3);
     expect(element.toString()).to.be("<div>helloworld!!!</div>");
     expect(tn.parentNode).to.be(element);
@@ -176,7 +181,7 @@ describe("string dom", function() {
 
   });
 
-  
+
   it("has the proper node attribute info", function() {
     var node = sd.createElement("div");
     node.setAttribute("id", "test");
@@ -195,7 +200,7 @@ describe("string dom", function() {
     var childNodes = node.childNodes.concat();
     for (var i = 10; i--;) node.insertBefore(childNodes[i], end);
     expect(node.toString()).to.be("<div>0123456789end</div>");
-  }); 
+  });
 
   it("ignores insertBefore if the node is itself", function () {
     var node = sd.createElement("div");
