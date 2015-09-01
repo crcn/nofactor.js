@@ -14,7 +14,7 @@ describe("string dom", function() {
   });
 
   it("encodes nodeValue set text node", function() {
-    expect((n = sd.createTextNode(), n.nodeValue = "hello <world", n.toString()).to.be("hello &#x3C;world");
+    expect((n = sd.createTextNode(), n.nodeValue = "hello <world", n.toString())).to.be("hello &#x3C;world");
   });
   
   it("can create an element", function() {
