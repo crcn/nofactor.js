@@ -9,8 +9,8 @@ describe("string dom", function() {
     expect(sd.createTextNode("hello").toString()).to.be("hello");
   });
 
-  it("doesn't encode a text node", function() {
-    expect(sd.createTextNode("hello <world").toString()).to.be("hello <world");
+  it("encodes a text node", function() {
+    expect(sd.createTextNode("hello <world").toString()).to.be("hello &#x3C;world");
   });
 
   it("can create an element", function() {

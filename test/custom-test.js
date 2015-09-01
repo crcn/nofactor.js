@@ -8,8 +8,6 @@ describe("custom#", function () {
 
 	var c = custom(string);
 
-
-
 	it("can register a custom element", function () {
 		c.registerElement("br", string.Element.extend({
 			toString: function () {
