@@ -9,10 +9,14 @@ describe("string dom", function() {
     expect(sd.createTextNode("hello").toString()).to.be("hello");
   });
 
-  it("encodes a text node", function() {
-    expect(sd.createTextNode("hello <world").toString()).to.be("hello &#x3C;world");
+  it("doesn't encode raw text node", function() {
+    expect(sd.createTextNode("hello <world").toString()).to.be("hello <world");
   });
 
+  it("encodes nodeValue set text node", function() {
+    expect((n = sd.createTextNode(), n.nodeValue = "hello <world", n.toString()).to.be("hello &#x3C;world");
+  });
+  
   it("can create an element", function() {
     expect(sd.createElement("div").toString()).to.be("<div></div>");
   });
